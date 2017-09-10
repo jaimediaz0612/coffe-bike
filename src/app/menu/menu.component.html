@@ -1,4 +1,10 @@
 <div>
-<a routerLink="customers/index" routerLinkActive="active">customers</a>
-<a routerLink="orders/add" routerLinkActive="active">orders</a>
+<button md-fab [mdMenuTriggerFor]="menu">Menu</button>
+<!--    <md-icon class="md-24" aria-label="Example icon-button with a heart icon">favorite</md-icon>
+</button>
+</button>-->
+<md-menu #menu="mdMenu">
+  <button md-menu-item routerLink="customers/index">customers</button>
+  <button md-menu-item routerLink="orders/add" >orders</button>
+</md-menu>
 </div>
