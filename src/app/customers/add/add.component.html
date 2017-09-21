@@ -1,3 +1,41 @@
-<p>
-  add works!
-</p>
+<form #addform="ngForm">
+  <table>
+    <tr>
+      <td>
+        <md-form-field>
+          <input required mdInput placeholder="Name"[(ngModel)]="customer.name" name="name" #name="ngModel">
+          <md-error>
+            Please enter a valid name.
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <md-form-field>
+              <input required mdInput placeholder="Address"[(ngModel)]="customer.address" name="address" #address="ngModel">
+              <md-error>
+                Please enter a valid address.
+              </md-error>
+            </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        stratum
+      </td>
+    </tr>
+    <tr>
+      <td>
+        gender
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div>
+          <button [disabled]="!addform.valid" md-raised-button color="primary">Save</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>

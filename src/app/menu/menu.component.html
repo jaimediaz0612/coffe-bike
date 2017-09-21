@@ -1,10 +1,9 @@
-<div>
-<button md-fab [mdMenuTriggerFor]="menu">Menu</button>
+
+<button md-fab [mdMenuTriggerFor]="menu"> <md-icon>home</md-icon></button>
 <!--    <md-icon class="md-24" aria-label="Example icon-button with a heart icon">favorite</md-icon>
 </button>
 </button>-->
 <md-menu #menu="mdMenu">
-  <button md-menu-item routerLink="customers/index">customers</button>
-  <button md-menu-item routerLink="orders/add" >orders</button>
+  <button routerLink="customers/index" md-menu-item >customers</button>
+  <button routerLink="orders/add" md-menu-item  >orders</button>
 </md-menu>
-</div>

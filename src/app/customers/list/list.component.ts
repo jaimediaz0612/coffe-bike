@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from "../customer";
 
 @Component({
   selector: 'customers-list',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  customersList:Array<Customer>
   constructor() { }
 
   ngOnInit() {
+    this.customersList = [
+      {
+        name:"Jaime",
+        address:"guamal",
+        gender:"m",
+        stratum: 1
+      },
+      {
+        name:"alexandra",
+        address:"guamal",
+        gender:"f",
+        stratum: 1
+      },
+      {
+        name:"maria jose",
+        address:"guamal",
+        gender:"f",
+        stratum: 1
+      },
+      {
+        name:"joaquin",
+        address:"guamal",
+        gender:"m",
+        stratum: 1
+      },
+    ];
   }
-
 }
