@@ -1,27 +1,48 @@
+import {Customer} from './customer';
 import { Injectable } from '@angular/core';
-import { Customer } from "./customer";
 
 @Injectable()
 export class CustomerDataMemoryService {
 
-  customerList:Array<Customer>;
-  constructor() {
+  customersList:Array<Customer>;
+  
+  constructor() { }
 
-    this.customerList=[
+  private initializeCustomerList(){
+    this.customersList = [
       {
-        name: "Mauro",
-        address: "Chipre",
-        stratum:1,
-        gender: "Male"},
-        {name: "Andres",
-        address: "Estrella",
-        stratum:3,
-        gender: "Male"},
-        {name: "Jaime",
-        address: "Aguacate",
-        stratum:3,
-        gender: "Indefinido"
-      }
-    ]
-   }
+        name: "Jaime",
+        address: "guamal",
+        gender: 1,
+        stratum: 1
+      },
+      {
+        name: "María jose",
+        address: "guamal",
+        gender: 0,
+        stratum: 4
+      },
+      {
+        name: "Alexandra",
+        address: "guamal",
+        gender: 1,
+        stratum: 1
+      },
+      {
+        name: "Joaquin",
+        address: "Villamaría",
+        gender: 1,
+        stratum: 5
+      },
+    ];
   }
+
+  loadCustomers(){
+    this.initializeCustomerList();
+  }
+
+  saveCustomer(newCustomer:Customer){
+    this.customersList.push(newCustomer);
+  }
+
+}

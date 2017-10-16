@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from "../customer";
 
-
+import { CustomerDataServerService } from '../customer-data-server.service';
 
 @Component({
   selector: 'customers-add',
@@ -12,31 +12,33 @@ export class AddComponent implements OnInit {
 
   public customer:Customer;
 
-  stratumList = [ 
-    {value:1, label:'One'},
-    {value:2, label:'two'},
-    {value:3, label:'three'},
-    {value:4, label:'four'},
-    {value:5, label:'five'},
-    {value:6, label:'six'},
+  stratumList = [
+    { value:1, label:"One" },
+    { value:2, label:"Two" },
+    { value:3, label:"Three" },
+    { value:4, label:"Four" },
+    { value:5, label:"Five" },
+    { value:6, label:"Six" },
   ];
-  
-  genderOptionList =[
-    {value:0, label:"hombre"},
-    {value:1, label:"mujer"},
+
+  genderOptionsList = [
+    { value:0, label:"Female" },
+    { value:1, label:"Male" },
   ];
-   
-  constructor() { }
+
+  constructor(
+    private customerDataService:CustomerDataServerService
+  ) { }
 
   ngOnInit() {
-    this.customer = new Customer();
-    this.customer.name="pepito"
+    this.customer = new Customer();    
   }
 
-  onNewClick(){
-    this.customer = new Customer();
-
-
+  onNewCustomer(){
+    this.customer = new Customer();    
   }
-  onSaveClick(){}
+
+  onSaveCustomer(){
+    this.customerDataService.saveCustomer(this.customer);
+  }
 }

@@ -2,14 +2,14 @@
   <tr>
     <td>Name</td>
     <td>Address</td>
-    <td>Stratus</td>
+    <td>Stratum</td>
     <td>Gender</td>
   </tr>
-  <tr *ngFor="let customer of customersList">
+  <tr *ngFor="let customer of customerDataService.customersList">
     <td>{{customer.name}}</td>
     <td>{{customer.address}}</td>
     <td>{{customer.stratum}}</td>
-    <td>{{customer.gender}}</td>
-     </tr>
+    <td>{{genderOptions[customer.gender]}}</td>
+  </tr>
 </table>
 <br/>

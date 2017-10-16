@@ -4,6 +4,7 @@ import { IndexComponent } from './index/index.component';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import {
@@ -38,10 +39,11 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  } from
-  '@angular/material';
-import { CustomerDataMemoryService } from "./customer-data-memory.service";
+} from '@angular/material';
+import { CustomerDataMemoryService } from './customer-data-memory.service';
+import { CustomerDataServerService } from './customer-data-server.service';
 
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -77,9 +79,11 @@ import { CustomerDataMemoryService } from "./customer-data-memory.service";
     MdTableModule,
     MdTabsModule,
     MdToolbarModule,
-    MdTooltipModule
+    MdTooltipModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   declarations: [IndexComponent, AddComponent, ListComponent],
-  providers: [CustomerDataMemoryService]
+  providers:[CustomerDataMemoryService, CustomerDataServerService]
 })
 export class CustomersModule { }
