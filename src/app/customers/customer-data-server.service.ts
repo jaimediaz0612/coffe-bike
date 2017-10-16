@@ -13,15 +13,15 @@ export class CustomerDataServerService {
   ) { }
 
   loadCustomers(){
-    this.http.get("http://localhost:1814/customer/GetAllCustomers")
+    this.http.get("http://localhost:8080/bike/webresources/com.cafe.entidades.customer")
     .subscribe(data => {
       this.customersList = data as Array<Customer>;
-    });
+    }); 
   }
 
   saveCustomer(newCustomer:Customer){
     let queryString = `?name=${newCustomer.name}&stratum=${newCustomer.stratum}&address=${newCustomer.address}&gender=${newCustomer.gender}`;
-    this.http.get("http://localhost:1814/customer/SaveCustomer" + queryString)
+    this.http.get("http://localhost:8080/bike/webresources/com.cafe.entidades.customer" + queryString)
     .subscribe(data => {
       this.loadCustomers();
     });

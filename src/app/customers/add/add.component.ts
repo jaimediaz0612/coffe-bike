@@ -31,7 +31,8 @@ export class AddComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.customer = new Customer();    
+    this.customer = new Customer();
+    this.customerDataService.loadCustomers();    
   }
 
   onNewCustomer(){

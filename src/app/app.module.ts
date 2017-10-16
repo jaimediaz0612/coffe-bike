@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 
 import {CustomersModule} from './customers/customers.module';
 import {OrdersModule} from './orders/orders.module';
+import {BicicletasModule} from './bicicletas/bicicletas.module';
+import {ComidasModule} from './comidas/comidas.module';
+import {RegistroModule} from './registro/registro.module';
 
 import { MenuComponent } from './menu/menu.component';
 import { CurrentOptionComponent } from './current-option/current-option.component';
 
 import { IndexComponent } from './customers/index/index.component';
 import {AddComponent as OrderAddComponent } from './orders/add/add.component';
+import {AddComponent as BicicletasAddComponent } from './bicicletas/add/add.component';
+import {AddComponent as ComidasAddComponent } from './comidas/add/add.component';
+import {AddComponent as RegistroAddComponent } from './registro/add/add.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdAutocompleteModule,
@@ -52,6 +58,9 @@ import {
 const appRoutes: Routes = [
   { path: 'customers/index', component:IndexComponent },
   { path: 'orders/add',      component: OrderAddComponent},
+  { path: 'bicicletas/add', component: BicicletasModule},
+  { path: 'comidas/add', component: ComidasModule},
+  { path: 'registro/add', component: RegistroModule} 
 ];
 
 @NgModule({
@@ -61,6 +70,9 @@ const appRoutes: Routes = [
     CurrentOptionComponent
   ],
   imports: [
+    BicicletasModule,
+    ComidasModule,
+    RegistroModule,
     BrowserModule,
     CustomersModule,
     OrdersModule,
