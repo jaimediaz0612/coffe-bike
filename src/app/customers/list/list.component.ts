@@ -9,34 +9,11 @@ import { Customer } from "../customer";
 export class ListComponent implements OnInit {
 
   customersList:Array<Customer>
-  constructor() { }
+  constructor(
+
+  ) { }
 
   ngOnInit() {
-    this.customersList = [
-      {
-        name:"Jaime",
-        address:"guamal",
-        gender:"m",
-        stratum: 1
-      },
-      {
-        name:"alexandra",
-        address:"guamal",
-        gender:"f",
-        stratum: 1
-      },
-      {
-        name:"maria jose",
-        address:"guamal",
-        gender:"f",
-        stratum: 1
-      },
-      {
-        name:"joaquin",
-        address:"guamal",
-        gender:"m",
-        stratum: 1
-      },
-    ];
+
   }
 }

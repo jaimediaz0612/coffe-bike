@@ -40,6 +40,8 @@ import {
   MdTooltipModule,
   } from
   '@angular/material';
+import { CustomerDataMemoryService } from "./customer-data-memory.service";
+
 
 @NgModule({
   imports: [
@@ -77,6 +79,7 @@ import {
     MdToolbarModule,
     MdTooltipModule
   ],
-  declarations: [IndexComponent, AddComponent, ListComponent]
+  declarations: [IndexComponent, AddComponent, ListComponent],
+  providers: [CustomerDataMemoryService]
 })
 export class CustomersModule { }
