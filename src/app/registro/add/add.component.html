@@ -1,3 +1,53 @@
-<p>
-  add works!
-</p>
+<form #addForm="ngForm">
+  <table>
+    <tr>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Name" required [(ngModel)]="registro.name" name="name" #name="ngModel" />
+          <md-error *ngIf="!name.valid && !name.pristine">
+            Ingrese un nombre valido
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Correo" required [(ngModel)]="registro.correo" name="Correo" #correo="ngModel" />
+          <md-error *ngIf="!correo.valid && !correo.pristine">
+            Ingrese un correo valido
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+        <md-radio-group required class="registro-radio-group" [(ngModel)]="registro.ciclista" name="Ciclista" #ciclista="ngModel">
+          <md-radio-button required class="registro-radio-button" *ngFor="let ciclistaOption of ciclistaOptionsList" [value]="ciclistaOption.value">
+            {{ciclistaOption.label}}
+          </md-radio-button>
+        </md-radio-group>
+        <md-error *ngIf="!ciclista.valid">
+          Ingrese una  opcion valida
+        </md-error>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br/>
+        <div class="button-row">
+          <button md-raised-button color="primary" (click)="onNewCustomer()">
+              New
+          </button>
+
+          <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveCustomer()">
+              Save
+            </button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>

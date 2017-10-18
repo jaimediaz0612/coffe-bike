@@ -1,3 +1,73 @@
-<p>
-  add works!
-</p>
+<form #addForm="ngForm">
+  <table>
+    <tr>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Tipo" required [(ngModel)]="bicicletas.tipo" name="tipo" #tipo="ngModel" />
+          <md-error *ngIf="!tipo.valid && !tipo.pristine">
+            Ingrese un tipo de bicicleta valido
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Color" required [(ngModel)]="bicicletas.color" name="Color" #color="ngModel" />
+          <md-error *ngIf="!color.valid && !color.pristine">
+            Ingrese un color valido
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Numero de cambios" required [(ngModel)]="bicicletas.cambios" name="Cambios" #cambios="ngModel" />
+          <md-error *ngIf="!cambios.valid && !cambios.pristine">
+            Ingrese un numero de cambios valido
+          </md-error>
+        </md-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <md-select placeholder="Talla" required [(ngModel)]="bicicletas.talla" name="Talla" #talla="ngModel">
+          <md-option *ngFor="let stratum of tallList" [value]="talla.value">
+            {{ talla.label }}
+          </md-option>
+        </md-select>
+        <md-error *ngIf="!talla.valid">
+          ingrese una talla valida
+        </md-error>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <br/>
+        <md-radio-group required class="bicicletas-radio-group" [(ngModel)]="bicicletas.rin" name="Medida del Rin" #rin="ngModel">
+          <md-radio-button required class="bicicletas-radio-group" *ngFor="let rinOption of rinOptionsList" [value]="rinOption.value">
+            {{rinOption.label}}
+          </md-radio-button>
+        </md-radio-group>
+        <md-error *ngIf="!rin.valid">
+          Ingrese una medida de rin valida
+        </md-error>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br/>
+        <div class="button-row">
+          <button md-raised-button color="primary" (click)="onNewCustomer()">
+              New
+          </button>
+
+          <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveCustomer()">
+              Save
+            </button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>

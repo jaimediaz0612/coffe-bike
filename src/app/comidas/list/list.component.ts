@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  
+  tipoOptions = ["Bebida", "Comidas"];
+  
+    constructor(
+      //private customerDataService:CustomerDataServerService
+    ) { }
+  
+    ngOnInit() {
+      //this.customerDataService.loadCustomers();
+    }
+  
   }
-
-}
+  

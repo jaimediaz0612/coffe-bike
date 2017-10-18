@@ -1,3 +1,18 @@
-<p>
-  list works!
-</p>
+<table border="1">
+  <tr>
+    <td>Tipo</td>
+    <td>Color</td>
+    <td>Talla</td>
+    <td>Rin</td>
+    <td>Cambios</td>
+  </tr>
+  <tr>
+  <!--<tr *ngFor="let customer of customerDataService.customersList">-->
+    <td>{{bicicletas.Tipo}}</td>
+    <td>{{bicicletas.color}}</td>
+    <td>{{bicicletas.talla}}</td>
+    <td>{{bicicletas.cambios}}</td>
+    <td>{{rinOptions[bicicletas.Rin]}}</td>
+  </tr>
+</table>
+<br/>

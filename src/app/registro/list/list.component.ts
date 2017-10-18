@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Registro } from "../registro";
+//import { CustomerDataServerService } from '../customer-data-server.service';
 
 @Component({
   selector: 'app-list',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+    
+  ciclistaOptions = ["SI", "NO"];
+  
+    constructor(
+      //private customerDataService:CustomerDataServerService
+    ) { }
+  
+    ngOnInit() {
+      //this.customerDataService.loadCustomers();
+    }
+  
   }
-
-}
+  

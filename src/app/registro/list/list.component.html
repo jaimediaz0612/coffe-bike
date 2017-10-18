@@ -1,3 +1,15 @@
-<p>
-  list works!
-</p>
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Correo</td>
+    <td>Telefono</td>
+    <td>Ciclista</td>
+  </tr>
+  <tr *ngFor="let customer of customerDataService.customersList">
+    <td>{{registro.name}}</td>
+    <td>{{registro.correo}}</td>
+    <td>{{registro.telefono}}</td>
+    <td>{{ciclistaOptions[registro.ciclista]}}</td>
+  </tr>
+</table>
+<br/>
