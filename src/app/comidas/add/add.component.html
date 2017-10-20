@@ -3,7 +3,7 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Producto" required [(ngModel)]="comida.producto" name="Prodcuto" #producto="ngModel" />
+          <input mdInput placeholder="Producto" required [(ngModel)]="comida.producto" name="Producto" #producto="ngModel" />
           <md-error *ngIf="!producto.valid && !producto.pristine">
             Ingrese un producto valido
           </md-error>
@@ -13,7 +13,7 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Valor" required [(ngModel)]="Valor" name="Valor" #valor="ngModel" />
+          <input mdInput placeholder="Valor" required [(ngModel)]="comida.valor" name="Valor" #valor="ngModel" />
           <md-error *ngIf="!valor.valid && !valor.pristine">
             Ingrese un valor valido
           </md-error>
@@ -49,11 +49,11 @@
       <td colspan="2">
         <br/>
         <div class="button-row">
-          <button md-raised-button color="primary" (click)="onNewCustomer()">
+          <button md-raised-button color="primary" (click)="onNewComida()">
               New
           </button>
 
-          <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveCustomer()">
+          <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveComida()">
               Save
             </button>
         </div>

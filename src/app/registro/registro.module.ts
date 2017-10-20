@@ -40,6 +40,8 @@ import {
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
 import { IndexComponent } from './index/index.component';
+import { RegistroDataMemoryService } from './registro-data-memory.service';
+//import { RegistroDataServerService } from './'
 
 @NgModule({
   imports: [
@@ -79,6 +81,7 @@ import { IndexComponent } from './index/index.component';
     MdToolbarModule,
     MdTooltipModule
   ],
-  declarations: [AddComponent, ListComponent, IndexComponent]
+  declarations: [AddComponent, ListComponent, IndexComponent],
+  providers: [RegistroDataMemoryService, RegistroDataMemoryService]
 })
 export class RegistroModule { }

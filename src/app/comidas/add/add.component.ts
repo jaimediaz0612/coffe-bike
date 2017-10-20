@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Comida as Comida } from '../comidas';
 import { ComidaDataServerService } from '../comida-data-server.service';
+import { ComidaDataMemoryService } from "../comida-data-memory.service";
+
 
 @Component({
   selector: 'comidas-add',
@@ -25,7 +27,7 @@ export class AddComponent implements OnInit {
   ];
 
   constructor(
-    private comidasDataService: ComidaDataServerService
+    private comidasDataService: ComidaDataMemoryService
   ) { }
 
   ngOnInit() {
@@ -33,11 +35,11 @@ export class AddComponent implements OnInit {
     this.comidasDataService.loadComidas();
   }
 
-  onNewCustomer() {
+  onNewComida() {
     this.comida = new Comida();
   }
 
-  onSaveCustomer() {
-    this.comidasDataService.saveComida(this.comida);
+  onSaveComida() {
+    this.comidasDataService.saveComidas(this.comida);
   }
 }

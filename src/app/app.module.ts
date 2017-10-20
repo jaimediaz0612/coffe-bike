@@ -49,13 +49,14 @@ import { RegistroModule } from './registro/registro.module';
 import { IndexComponent as CostumerIndex } from './customers/index/index.component';
 import { IndexComponent as BicicletasIndex } from './bicicletas/index/index.component';
 import { IndexComponent as ComidasIndex } from './comidas/index/index.component';
+import { IndexComponent as RegistroIndex } from './registro/index/index.component';
 import { AddComponent as RegistroAdd } from './registro/add/add.component';
 
 const appRoutes: Routes = [
   { path: 'customers/index', component: CostumerIndex },
   { path: 'bicicletas/index', component: BicicletasIndex },
   { path: 'comidas/index', component: ComidasIndex },
-  { path: 'registro/add', component: RegistroAdd }
+  { path: 'registro/index', component: RegistroIndex }
 ];
 
 @NgModule({

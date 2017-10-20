@@ -5,11 +5,11 @@
     <td>Telefono</td>
     <td>Ciclista</td>
   </tr>
-  <tr *ngFor="let customer of customerDataService.customersList">
+  <tr *ngFor="let registro of registroDataService.registroList">
     <td>{{registro.name}}</td>
     <td>{{registro.correo}}</td>
     <td>{{registro.telefono}}</td>
-    <td>{{ciclistaOptions[registro.ciclista]}}</td>
+    <td>{{registroOptions[registro.ciclista]}}</td>
   </tr>
 </table>
 <br/>

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Registro } from "../registro";
+import { RegistroDataMemoryService } from '../registro-data-memory.service';
 
 //import { CustomerDataServerService } from '../customer-data-server.service';
 
 
 @Component({
-  selector: 'app-add',
+  selector: 'registro-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
@@ -13,26 +14,26 @@ export class AddComponent implements OnInit {
 
   public registro:Registro;
   
-    ciclistaOptionsList = [
+    registroOptionsList = [
       { value:0, label:"SI" },
       { value:1, label:"NO" },
     ];
   
     constructor(
-      //private customerDataService:CustomerDataServerService
+      private registroDataService: RegistroDataMemoryService
     ) { }
   
     ngOnInit() {
       this.registro = new Registro();
-      //this.customerDataService.loadCustomers();    
+      this.registroDataService.loadRegistro();
     }
   
-    onNewCustomer(){
-      this.registro = new Registro();    
+    onNewRegistro() {
+      this.registro = new Registro();
     }
   
-    onSaveCustomer(){
-      //this.customerDataService.saveCustomer(this.customer);
+    onSaveRegistro() {
+      this.registroDataService.saveRegistro(this.registro);
     }
   }
   

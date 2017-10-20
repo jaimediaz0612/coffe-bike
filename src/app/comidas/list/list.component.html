@@ -1,15 +1,15 @@
 <table border="1">
   <tr>
     <td>Producto</td>
-    <td>Tipo</td>
     <td>Cantidad</td>
     <td>Valor</td>
+    <td>Tipo</td>
   </tr>
   <tr *ngFor="let comida of comidaDataService.comidasList">
-    <td>{{comidas.Producto}}</td>
-    <td>{{comidas.Cantidad}}</td>
-    <td>{{comidas.Valor}}</td>
-    <td>{{tipoOptions[comidas.Tipo]}}</td>
+    <td>{{comida.producto}}</td>
+    <td>{{comida.cantidad}}</td>
+    <td>{{comida.valor}}</td>
+    <td>{{tipoOptions[comida.tipo]}}</td>
   </tr>
 </table>
 <br/>

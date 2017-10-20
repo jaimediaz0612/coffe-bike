@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Comida } from '../comidas';
 import { ComidaDataServerService } from '../comida-data-server.service';
+import { ComidaDataMemoryService } from '../comida-data-memory.service'
 
 @Component({
   selector: 'comidas-list',
@@ -11,7 +13,7 @@ export class ListComponent implements OnInit {
   tipoOptions = ['Bebida', 'Comidas'];
 
   constructor(
-    private comidaDataService: ComidaDataServerService
+    private comidaDataService: ComidaDataMemoryService
   ) { }
 
   ngOnInit() {

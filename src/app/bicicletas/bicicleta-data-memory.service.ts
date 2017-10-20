@@ -17,6 +17,14 @@ export class BicicletaDataMemoryService {
         rin: 29,
         talla: 3,
         tipo: 'MTB'
+      },
+      {
+        bi_codigo: '2',
+        cambios: 24,
+        color: 'roja',
+        rin: 27,
+        talla: 4,
+        tipo: 'ruta'
       }
     ];
   }

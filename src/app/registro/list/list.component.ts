@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-// import { Registro } from "../registro";
+import { Registro } from "../registro";
 // import { CustomerDataServerService } from '../customer-data-server.service';
+import { RegistroDataMemoryService } from '../registro-data-memory.service';
 
 @Component({
-  selector: 'app-list',
+  selector: 'registro-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
@@ -12,11 +13,11 @@ export class ListComponent implements OnInit {
   ciclistaOptions = ['SI', 'NO'];
 
   constructor(
-    // private customerDataService:CustomerDataServerService
+    private registroDataService: RegistroDataMemoryService
   ) { }
 
   ngOnInit() {
-    // this.customerDataService.loadCustomers();
+    this.registroDataService.loadRegistro();
   }
 
 }
