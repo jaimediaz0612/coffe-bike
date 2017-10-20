@@ -1,6 +1,6 @@
-export class Comidas {
-    producto:string;
-    tipo:string;
-    cantidad:number;
-    valor:number;
+export class Comida {
+    producto: string;
+    tipo: string;
+    cantidad: number;
+    valor: number;
 }

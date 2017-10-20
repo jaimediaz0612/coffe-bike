@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AddComponent } from './add/add.component';
-import { ListComponent } from './list/list.component';
-import { IndexComponent } from './index/index.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -39,15 +36,17 @@ import {
   MdToolbarModule,
   MdTooltipModule,
 } from '@angular/material';
-//import { CustomerDataMemoryService } from './customer-data-memory.service';
-//import { CustomerDataServerService } from './customer-data-server.service';
 
-import {HttpClientModule} from '@angular/common/http';
+import { AddComponent } from './add/add.component';
+import { ListComponent } from './list/list.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   imports: [
-    CommonModule
     FormsModule,
+    CommonModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     MdAutocompleteModule,
     MdButtonModule,
     MdButtonToggleModule,
@@ -78,11 +77,8 @@ import {HttpClientModule} from '@angular/common/http';
     MdTableModule,
     MdTabsModule,
     MdToolbarModule,
-    MdTooltipModule,
-    BrowserAnimationsModule,
-    HttpClientModule
+    MdTooltipModule
   ],
   declarations: [AddComponent, ListComponent, IndexComponent]
-  //providers:[CustomerDataMemoryService, CustomerDataServerService]
 })
 export class RegistroModule { }

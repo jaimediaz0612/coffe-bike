@@ -3,7 +3,7 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Tipo" required [(ngModel)]="bicicletas.tipo" name="tipo" #tipo="ngModel" />
+          <input mdInput placeholder="Tipo" required [(ngModel)]="bicicleta.tipo" name="tipo" #tipo="ngModel" />
           <md-error *ngIf="!tipo.valid && !tipo.pristine">
             Ingrese un tipo de bicicleta valido
           </md-error>
@@ -13,7 +13,7 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Color" required [(ngModel)]="bicicletas.color" name="Color" #color="ngModel" />
+          <input mdInput placeholder="Color" required [(ngModel)]="bicicleta.color" name="Color" #color="ngModel" />
           <md-error *ngIf="!color.valid && !color.pristine">
             Ingrese un color valido
           </md-error>
@@ -23,7 +23,8 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Numero de cambios" required [(ngModel)]="bicicletas.cambios" name="Cambios" #cambios="ngModel" />
+          <input mdInput placeholder="Numero de cambios" required [(ngModel)]="bicicleta.cambios" name="Cambios" #cambios="ngModel"
+          />
           <md-error *ngIf="!cambios.valid && !cambios.pristine">
             Ingrese un numero de cambios valido
           </md-error>
@@ -32,8 +33,8 @@
     </tr>
     <tr>
       <td>
-        <md-select placeholder="Talla" required [(ngModel)]="bicicletas.talla" name="Talla" #talla="ngModel">
-          <md-option *ngFor="let stratum of tallList" [value]="talla.value">
+        <md-select placeholder="Talla" required [(ngModel)]="bicicleta.talla" name="talla" #talla="ngModel">
+          <md-option *ngFor="let talla of tallaList" [value]="talla.value">
             {{ talla.label }}
           </md-option>
         </md-select>
@@ -45,7 +46,7 @@
     <tr>
       <td>
         <br/>
-        <md-radio-group required class="bicicletas-radio-group" [(ngModel)]="bicicletas.rin" name="Medida del Rin" #rin="ngModel">
+        <md-radio-group name="Medida del Rin" required class="bicicletas-radio-group" [(ngModel)]="bicicleta.rin" #rin="ngModel">
           <md-radio-button required class="bicicletas-radio-group" *ngFor="let rinOption of rinOptionsList" [value]="rinOption.value">
             {{rinOption.label}}
           </md-radio-button>
@@ -60,12 +61,11 @@
         <br/>
         <div class="button-row">
           <button md-raised-button color="primary" (click)="onNewCustomer()">
-              New
+            New
           </button>
-
           <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveCustomer()">
-              Save
-            </button>
+            Save
+          </button>
         </div>
       </td>
     </tr>

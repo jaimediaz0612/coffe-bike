@@ -3,7 +3,7 @@
     <tr>
       <td>
         <md-form-field>
-          <input mdInput placeholder="Producto" required [(ngModel)]="comidas.producto" name="Prodcuto" #producto="ngModel" />
+          <input mdInput placeholder="Producto" required [(ngModel)]="comida.producto" name="Prodcuto" #producto="ngModel" />
           <md-error *ngIf="!producto.valid && !producto.pristine">
             Ingrese un producto valido
           </md-error>
@@ -22,7 +22,7 @@
     </tr>
     <tr>
       <td>
-        <md-select placeholder="Cantidad" required [(ngModel)]="comidas.cantidad" name="Cantidad" #cantidad="ngModel">
+        <md-select placeholder="Cantidad" required [(ngModel)]="comida.cantidad" name="Cantidad" #cantidad="ngModel">
           <md-option *ngFor="let cantidad of cantidadList" [value]="cantidad.value">
             {{ cantidad.label }}
           </md-option>
@@ -35,8 +35,8 @@
     <tr>
       <td>
         <br/>
-        <md-radio-group required class="comidas-radio-group" [(ngModel)]="comidas.tipo" name="Tipo de comida" #tipo="ngModel">
-          <md-radio-button required class="comidas-radio-group" *ngFor="let tipoOption of tipoOptionsList" [value]="tipoOption.value">
+        <md-radio-group required class="comida-radio-group" [(ngModel)]="comida.tipo" name="Tipo de comida" #tipo="ngModel">
+          <md-radio-button required class="comida-radio-group" *ngFor="let tipoOption of tipoOptionsList" [value]="tipoOption.value">
             {{tipoOption.label}}
           </md-radio-button>
         </md-radio-group>

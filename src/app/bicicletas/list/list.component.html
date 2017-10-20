@@ -3,16 +3,15 @@
     <td>Tipo</td>
     <td>Color</td>
     <td>Talla</td>
-    <td>Rin</td>
     <td>Cambios</td>
+    <td>Rin</td>
   </tr>
-  <tr>
-  <!--<tr *ngFor="let customer of customerDataService.customersList">-->
-    <td>{{bicicletas.Tipo}}</td>
-    <td>{{bicicletas.color}}</td>
-    <td>{{bicicletas.talla}}</td>
-    <td>{{bicicletas.cambios}}</td>
-    <td>{{rinOptions[bicicletas.Rin]}}</td>
+  <tr *ngFor="let bicicleta of bicicletasDataService.bicicletasList">
+    <td>{{bicicleta.tipo}}</td>
+    <td>{{bicicleta.color}}</td>
+    <td>{{bicicleta.talla}}</td>
+    <td>{{bicicleta.cambios}}</td>
+    <td>{{bicicleta.rin}}</td>
   </tr>
 </table>
 <br/>

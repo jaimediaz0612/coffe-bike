@@ -1,8 +1,9 @@
-
-<button md-fab [mdMenuTriggerFor]="menu"> <md-icon>home</md-icon></button>
+<button md-fab [mdMenuTriggerFor]="menu">
+  <md-icon>home</md-icon>
+</button>
 <md-menu #menu="mdMenu">
-  <button routerLink="customers/index" md-menu-item >Clientes</button>
-  <button routerLink="bicicletas/add" md-menu-item  >Bicicletas</button>
-  <button routerLink="comidas/add" md-menu-item  >Antojos</button>
-  <button routerLink="registro/add" md-menu-item  >Registrate</button>
+  <button routerLink="customers/index" md-menu-item>Clientes</button>
+  <button routerLink="bicicletas/index" md-menu-item>Bicicletas</button>
+  <button routerLink="comidas/index" md-menu-item>Comidas</button>
+  <button routerLink="registro/add" md-menu-item>Registrar</button>
 </md-menu>

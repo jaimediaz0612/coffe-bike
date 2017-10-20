@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from "../customer";
+import { Customer } from '../customer';
 import { CustomerDataServerService } from '../customer-data-server.service';
-
+import { CustomerDataMemoryService } from '../customer-data-memory.service';
 
 @Component({
   selector: 'customers-list',
@@ -9,11 +9,11 @@ import { CustomerDataServerService } from '../customer-data-server.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-    
-  genderOptions = ["Female", "Male"];
+
+  genderOptions = ['Female', 'Male'];
 
   constructor(
-    private customerDataService:CustomerDataServerService
+    private customerDataService: CustomerDataMemoryService // CustomerDataServerService
   ) { }
 
   ngOnInit() {

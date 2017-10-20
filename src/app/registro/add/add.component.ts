@@ -11,7 +11,7 @@ import { Registro } from "../registro";
 })
 export class AddComponent implements OnInit {
 
-  public customer:Registro;
+  public registro:Registro;
   
     ciclistaOptionsList = [
       { value:0, label:"SI" },
@@ -28,7 +28,7 @@ export class AddComponent implements OnInit {
     }
   
     onNewCustomer(){
-      this.customer = new Registro();    
+      this.registro = new Registro();    
     }
   
     onSaveCustomer(){

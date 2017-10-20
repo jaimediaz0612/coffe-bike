@@ -1,6 +1,6 @@
-export class registro {
-    name:string;
-    correo:string;
-    telefono:number;
-    ciclista:number;
+export class Registro {
+    name: string;
+    correo: string;
+    telefono: number;
+    ciclista: number;
 }
