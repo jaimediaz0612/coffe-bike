@@ -19,18 +19,26 @@
           </md-error>
         </md-form-field>
       </td>
+      <td>
+        <md-form-field>
+          <input mdInput placeholder="Telefono" required [(ngModel)]="registro.telefono" name="telefono" #telefono="ngModel" />
+          <md-error *ngIf="!telefono.valid && !telefono.pristine">
+            Ingrese un telefono valido
+          </md-error>
+        </md-form-field>
+      </td>
     </tr>
     <tr>
     </tr>
     <tr>
       <td>
         <br/>
-        <md-radio-group required class="registro-radio-group" [(ngModel)]="registro.ciclista" name="Ciclista" #ciclista="ngModel">
-          <md-radio-button required class="registro-radio-button" *ngFor="let ciclistaOption of ciclistaOptionsList" [value]="ciclistaOption.value">
-            {{ciclistaOption.label}}
+        <md-radio-group required class="registro-radio-group" [(ngModel)]="registro.ciclista" name="ciclista" #ciclista="ngModel">
+          <md-radio-button required class="registro-radio-button" *ngFor="let registroOption of registroOptionsList" [value]="registroOption.value">
+            {{registroOption.label}}
           </md-radio-button>
         </md-radio-group>
-        <md-error *ngIf="!ciclista.valid">
+        <md-error *ngIf="!registro.valid">
           Ingrese una  opcion valida
         </md-error>
       </td>
