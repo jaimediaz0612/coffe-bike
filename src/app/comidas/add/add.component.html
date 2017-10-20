@@ -28,7 +28,7 @@
           </md-option>
         </md-select>
         <md-error *ngIf="!cantidad.valid">
-          ingrese una cantidad valida
+          Ingrese una cantidad valida
         </md-error>
       </td>
     </tr>
@@ -50,11 +50,10 @@
         <br/>
         <div class="button-row">
           <button md-raised-button color="primary" (click)="onNewComida()">
-              New
+              Nuevo
           </button>
-
           <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveComida()">
-              Save
+              Guardar
             </button>
         </div>
       </td>

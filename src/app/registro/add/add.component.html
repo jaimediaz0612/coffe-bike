@@ -1,5 +1,5 @@
 <form #addForm="ngForm">
-  <table>
+  <table style="width:100%">
     <tr>
       <td>
         <md-form-field>
@@ -39,7 +39,7 @@
           </md-radio-button>
         </md-radio-group>
         <md-error *ngIf="!registro.valid">
-          Ingrese una  opcion valida
+          Es usted ciclista?
         </md-error>
       </td>
     </tr>
@@ -48,11 +48,11 @@
         <br/>
         <div class="button-row">
           <button md-raised-button color="primary" (click)="onNewRegistro()">
-              New
+              Nuevo
           </button>
 
           <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveRegistro()">
-              Save
+              Guardar
             </button>
         </div>
       </td>

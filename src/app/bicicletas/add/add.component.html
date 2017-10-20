@@ -39,7 +39,7 @@
           </md-option>
         </md-select>
         <md-error *ngIf="!talla.valid">
-          ingrese una talla valida
+          Ingrese una talla valida
         </md-error>
       </td>
     </tr>
@@ -61,10 +61,10 @@
         <br/>
         <div class="button-row">
           <button md-raised-button color="primary" (click)="onNewBike()">
-            New
+            Nuevo
           </button>
           <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="onSaveBIke()">
-            Save
+            Guardar
           </button>
         </div>
       </td>
