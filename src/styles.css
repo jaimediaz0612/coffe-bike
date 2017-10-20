@@ -5,6 +5,6 @@
 
 body {
     padding: 20px;
-    background: #c4ffe3;
+    background-image: url("/assets/images/fondo.jpg");
     position: relative;
   }
