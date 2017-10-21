@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="BicicletaCreateDlg" widgetVar="BicicletaCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateBicicletaTitle}">
+            <h:form id="BicicletaCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{bicicletaController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_biCodigo}" for="biCodigo" />
+                        <p:inputText id="biCodigo" value="#{bicicletaController.selected.biCodigo}" title="#{bundle.CreateBicicletaTitle_biCodigo}" required="true" requiredMessage="#{bundle.CreateBicicletaRequiredMessage_biCodigo}"/>
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_tipo}" for="tipo" />
+                        <p:inputText id="tipo" value="#{bicicletaController.selected.tipo}" title="#{bundle.CreateBicicletaTitle_tipo}" />
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_color}" for="color" />
+                        <p:inputText id="color" value="#{bicicletaController.selected.color}" title="#{bundle.CreateBicicletaTitle_color}" />
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_talla}" for="talla" />
+                        <p:inputText id="talla" value="#{bicicletaController.selected.talla}" title="#{bundle.CreateBicicletaTitle_talla}" />
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_rin}" for="rin" />
+                        <p:inputText id="rin" value="#{bicicletaController.selected.rin}" title="#{bundle.CreateBicicletaTitle_rin}" />
+                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_cambios}" for="cambios" />
+                        <p:inputText id="cambios" value="#{bicicletaController.selected.cambios}" title="#{bundle.CreateBicicletaTitle_cambios}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{bicicletaController.create}" value="#{bundle.Save}" update="display,:BicicletaListForm:datalist,:growl" oncomplete="handleSubmit(args,'BicicletaCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="BicicletaCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

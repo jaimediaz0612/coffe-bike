@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CustomerEditDlg" widgetVar="CustomerEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCustomerTitle}">
+            <h:form id="CustomerEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{customerController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCustomerLabel_codigo}" for="codigo" />
+                        <p:inputText id="codigo" value="#{customerController.selected.codigo}" title="#{bundle.EditCustomerTitle_codigo}" required="true" requiredMessage="#{bundle.EditCustomerRequiredMessage_codigo}"/>
+                        <p:outputLabel value="#{bundle.EditCustomerLabel_name}" for="name" />
+                        <p:inputText id="name" value="#{customerController.selected.name}" title="#{bundle.EditCustomerTitle_name}" />
+                        <p:outputLabel value="#{bundle.EditCustomerLabel_address}" for="address" />
+                        <p:inputText id="address" value="#{customerController.selected.address}" title="#{bundle.EditCustomerTitle_address}" />
+                        <p:outputLabel value="#{bundle.EditCustomerLabel_stratum}" for="stratum" />
+                        <p:inputText id="stratum" value="#{customerController.selected.stratum}" title="#{bundle.EditCustomerTitle_stratum}" />
+                        <p:outputLabel value="#{bundle.EditCustomerLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{customerController.selected.gender}" title="#{bundle.EditCustomerTitle_gender}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{customerController.update}" value="#{bundle.Save}" update="display,:CustomerListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CustomerEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CustomerEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
