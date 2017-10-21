@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   tipoOptions = ['Bebida', 'Comidas'];
 
   constructor(
-    private comidaDataService: ComidaDataMemoryService
+    private comidaDataService: ComidaDataServerService
   ) { }
 
   ngOnInit() {

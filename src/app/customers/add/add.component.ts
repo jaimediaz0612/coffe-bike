@@ -12,6 +12,8 @@ export class AddComponent implements OnInit {
 
   public customer: Customer;
 
+  customersList: Array<Customer>;
+
   stratumList = [
     { value: 1, label: 'One' },
     { value: 2, label: 'Two' },
@@ -27,11 +29,12 @@ export class AddComponent implements OnInit {
   ];
 
   constructor(
-    private customerDataService: CustomerDataMemoryService // CustomerDataServerService
+    private customerDataService: CustomerDataServerService
   ) { }
 
   ngOnInit() {
     this.customer = new Customer();
+    //this.customerDataService.loadCustomers();
     this.customerDataService.loadCustomers();
   }
 

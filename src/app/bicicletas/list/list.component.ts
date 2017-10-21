@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   rinOptions = ['26', '27.5', '29'];
 
   constructor(
-    private bicicletasDataService: BicicletaDataMemoryService
+    private bicicletasDataService: BicicletaDataServerService
   ) { }
 
   ngOnInit() {

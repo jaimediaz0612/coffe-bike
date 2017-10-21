@@ -12,6 +12,8 @@ import { ComidaDataMemoryService } from "../comida-data-memory.service";
 export class AddComponent implements OnInit {
   public comida: Comida;
 
+  comidasList: Array<Comida>;
+
   cantidadList = [
     { value: 1, label: 'One' },
     { value: 2, label: 'Two' },
@@ -27,11 +29,12 @@ export class AddComponent implements OnInit {
   ];
 
   constructor(
-    private comidasDataService: ComidaDataMemoryService
+    private comidasDataService: ComidaDataServerService
   ) { }
 
   ngOnInit() {
     this.comida = new Comida();
+    //this.comidasDataService.loadComidas();
     this.comidasDataService.loadComidas();
   }
 
@@ -40,6 +43,6 @@ export class AddComponent implements OnInit {
   }
 
   onSaveComida() {
-    this.comidasDataService.saveComidas(this.comida);
+    this.comidasDataService.saveComida(this.comida);
   }
 }

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Registro } from "../registro";
 import { RegistroDataMemoryService } from '../registro-data-memory.service';
 
-//import { CustomerDataServerService } from '../customer-data-server.service';
-
 
 @Component({
   selector: 'registro-add',

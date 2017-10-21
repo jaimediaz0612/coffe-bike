@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Bicicleta } from '../bicicletas';
+import { Bicicleta as Bicicleta} from '../bicicletas';
 import { BicicletaDataServerService } from '../bicicleta-data-server.service';
 import { BicicletaDataMemoryService } from '../bicicleta-data-memory.service';
 
@@ -9,8 +9,8 @@ import { BicicletaDataMemoryService } from '../bicicleta-data-memory.service';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-
   public bicicleta: Bicicleta;
+  bicicletasList: Array<Bicicleta>;
 
   tallaList = [
     { value: 1, label: 'XS' },
@@ -27,11 +27,12 @@ export class AddComponent implements OnInit {
   ];
 
   constructor(
-    private bicicletasDataService: BicicletaDataMemoryService
+    private bicicletasDataService: BicicletaDataServerService
   ) { }
 
   ngOnInit() {
     this.bicicleta = new Bicicleta();
+    //this.bicicletasDataService.loadBicicletas();
     this.bicicletasDataService.loadBicicletas();
   }
 

@@ -10,10 +10,10 @@ import { CustomerDataMemoryService } from '../customer-data-memory.service';
 })
 export class ListComponent implements OnInit {
 
-  genderOptions = ['Femenino', 'Masculino'];
+  genderOptions = [ 'Masculino','Femenino',];
 
   constructor(
-    private customerDataService: CustomerDataMemoryService // CustomerDataServerService
+    private customerDataService: CustomerDataServerService
   ) { }
 
   ngOnInit() {
