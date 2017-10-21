@@ -24,8 +24,8 @@ export class AddComponent implements OnInit {
   ];
 
   genderOptionsList = [
-    { value: 0, label: 'Femenino' },
-    { value: 1, label: 'Masculino' },
+    { value: 0, label: 'Masculino' },
+    { value: 1, label: 'Femenino' },
   ];
 
   constructor(
